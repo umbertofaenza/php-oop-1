@@ -6,11 +6,11 @@
  * */
 class Genre
 {
-    public $name;
+    public $genres;
 
     public function __construct(
-        string $name,
+        array $genres,
     ) {
-        $this->name = $name;
+        $this->genres = $genres;
     }
 }

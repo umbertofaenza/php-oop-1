@@ -3,23 +3,24 @@
 require_once __DIR__ . './Models/Movie.php';
 require_once __DIR__ . './Models/Genre.php';
 
-$genre_drama = new Genre('Drama');
-$genres_pshycological = new Genre("Psychological");
-$genre_western = new Genre("Western");
+$genre_array_1 = ['Drama', 'Western'];
+$genre_array_2 = ['Drama', 'Psychological'];
+
+$genres_1 = new Genre($genre_array_1);
+$genres_2 = new Genre($genre_array_2);
+
 
 
 $movie_1 = new Movie(
     'dance with wolves',
     "1990",
-    $genre_drama,
-    $genre_western
+    $genres_1,
 );
 
 $movie_2 = new Movie(
     "one flew over the cuckoo's nest",
     "1975",
-    $genre_drama,
-    $genres_pshycological
+    $genres_2,
 );
 
 ?>
@@ -43,12 +44,14 @@ $movie_2 = new Movie(
     </h2>
     <p>
         Year:
-        <?= $movie_1->getCapitalisedTitle($movie_1->year); ?>
+        <?= $movie_1->year; ?>
     </p>
     <p>
         Genre:
-        <?= $movie_1->getCapitalisedTitle($movie_1->genre_1->name); ?>,
-        <?= $movie_1->getCapitalisedTitle($movie_1->genre_2->name); ?>
+        <?php foreach ($movie_1->genres->genres as $genre) {
+            echo "$genre ";
+        }
+        ?>
     </p>
 
     <!-- Movie 2  -->
@@ -57,12 +60,14 @@ $movie_2 = new Movie(
     </h2>
     <p>
         Year:
-        <?= $movie_2->getCapitalisedTitle($movie_2->year); ?>
+        <?= $movie_2->year; ?>
     </p>
     <p>
         Genre:
-        <?= $movie_2->getCapitalisedTitle($movie_2->genre_1->name); ?>,
-        <?= $movie_2->getCapitalisedTitle($movie_2->genre_2->name); ?>
+        <?php foreach ($movie_2->genres->genres as $genre) {
+            echo "$genre ";
+        }
+        ?>
     </p>
 </body>
 
