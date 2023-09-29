@@ -11,13 +11,21 @@ class Movie
     public $title;
     public $year;
 
-    public $genre;
+    public $genre_1;
 
-    public function __construct(string $title, string $year, Genre $genre)
-    {
+    public $genre_2;
+
+    public function __construct(
+        string $title,
+        string $year,
+        Genre $genre_1,
+        Genre $genre_2
+    ) {
         $this->title = $title;
         $this->year = $year;
-        $this->genre = $genre;
+        $this->genre_1 = $genre_1;
+        $this->genre_2 = $genre_2;
+
     }
 
     public function getCapitalisedTitle($title)
