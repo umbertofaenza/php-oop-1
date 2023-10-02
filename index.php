@@ -1,9 +1,10 @@
 <?php
 
+require_once __DIR__ . './Models/Production.php';
 require_once __DIR__ . './Models/Movie.php';
 
 $genre_drama = new Genre("Drama");
 
-$movie_1 = new Movie("Titolo", "Anno", $genre_drama);
+$prod_1 = new Production("Titolo", $genre_drama);
 
-var_dump($movie_1);
+echo $prod_1->get_details($prod_1->title, $prod_1->genre->name);
