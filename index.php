@@ -6,6 +6,15 @@ require_once __DIR__ . './Models/TvSerie.php';
 
 $genre_drama = new Genre("Drama");
 
-$prod_1 = new TvSerie("Titolo", $genre_drama, "2004", "2010", 50, 5);
+$prods = [
+    new TvSerie("Titolo", $genre_drama, "2004", "2010", 50, 5),
+    new Movie("Titolo", $genre_drama, "2004", 120),
+    new TvSerie("Titolo", $genre_drama, "2004", "2010", 50, 5),
+    new Movie("Titolo", $genre_drama, "2004", 120),
+    new TvSerie("Titolo", $genre_drama, "2004", "2010", 50, 5),
+    new Movie("Titolo", $genre_drama, "2004", 120),
+    new TvSerie("Titolo", $genre_drama, "2004", "2010", 50, 5),
+    new Movie("Titolo", $genre_drama, "2004", 120),
+];
 
-echo $prod_1->get_details();
+var_dump($prods);
