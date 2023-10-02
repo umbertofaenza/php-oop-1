@@ -46,15 +46,44 @@ $prods = [
                     <div class="col-3">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
+                                <!-- title -->
                                 <h3 class="card-title">
                                     <?= $prod->title ?>
-                                    </h5>
-                                    <p class="card-text">
-                                    <h5>
-                                        <?= get_class($prod) ?>
-                                    </h5>
-                                    <?= $prod->get_details() ?>
-                                    </p>
+                                </h3>
+                                <!-- description -->
+                                <p class="card-text">
+                                    <!-- type -->
+                                <h6>
+                                    <?= get_class($prod) ?>
+                                </h6>
+                                <!-- details -->
+                                <ul>
+                                    <li>
+                                        Genre:
+                                        <?= $prod->genre->name ?>
+                                    </li>
+                                    <li>
+                                        Year:
+                                        <?php if (get_class($prod) == "Movie") {
+                                            echo $prod->published_year;
+                                        } else if (get_class($prod) == "TvSerie") {
+                                            echo "from $prod->aired_from_year to $prod->aired_to_year";
+                                        }
+                                        ?>
+                                    </li>
+                                    <li>
+                                        <?php if (get_class($prod) == "Movie") {
+                                            echo "Duration: $prod->running_time";
+                                        } else if (get_class($prod) == "TvSerie") {
+                                            echo "Number of episodes: $prod->number_of_episodes";
+                                        }
+                                        ?>
+                                    </li>
+                                    <?php if (get_class($prod) == "TvSerie") {
+                                        echo "<li> Number of seasons: $prod->number_of_seasons </li>";
+                                    } ?>
+                                </ul>
+                                </p>
                             </div>
                         </div>
                     </div>
