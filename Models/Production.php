@@ -20,8 +20,8 @@ class Production
         $this->genre = $genre;
     }
 
-    public function get_details($title, $genre)
+    public function get_details()
     {
-        return "$title, $genre";
+        return "$this->title, $this->genre";
     }
 }

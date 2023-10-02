@@ -19,15 +19,14 @@ class Movie extends Production
         string $published_year,
         int $running_time
     ) {
-        $this->title = $title;
-        $this->genre = $genre;
+        parent::__construct($title, $genre);
         $this->published_year = $published_year;
         $this->running_time = $running_time;
 
     }
 
-    public function get_details($title, $genre, $published_year, $running_time)
+    public function get_details()
     {
-        return "$title, $genre, $published_year, $running_time";
+        return "$this->title, $this->genre, $this->published_year, $this->running_time";
     }
 }

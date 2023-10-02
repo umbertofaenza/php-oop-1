@@ -23,16 +23,15 @@ class TvSerie extends Production
         int $number_of_episodes,
         int $number_of_seasons
     ) {
-        $this->title = $title;
-        $this->genre = $genre;
+        parent::__construct($title, $genre);
         $this->aired_from_year = $aired_from_year;
         $this->aired_to_year = $aired_to_year;
         $this->number_of_episodes = $number_of_episodes;
         $this->number_of_seasons = $number_of_seasons;
     }
 
-    public function get_details($title, $genre, $aired_from_year, $aired_to_year, $number_of_episodes, $number_of_seasons)
+    public function get_details()
     {
-        return "$title, $genre, $aired_from_year, $aired_to_year, $number_of_episodes, $number_of_seasons";
+        return "$this->title, $this->genre, $this->aired_from_year, $this->aired_to_year, $this->number_of_episodes, $this->number_of_seasons";
     }
 }
