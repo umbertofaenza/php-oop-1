@@ -8,8 +8,6 @@ require_once __DIR__ . "./Genre.php";
  * */
 class TvSerie extends Production
 {
-    public $title;
-    public $genre;
     public $aired_from_year;
     public $aired_to_year;
     public $number_of_episodes;
@@ -32,6 +30,7 @@ class TvSerie extends Production
 
     public function get_details()
     {
-        return "$this->title, $this->genre, $this->aired_from_year, $this->aired_to_year, $this->number_of_episodes, $this->number_of_seasons";
+        $genre_name = $this->genre->name;
+        return "$this->title, $genre_name, $this->aired_from_year, $this->aired_to_year, $this->number_of_episodes, $this->number_of_seasons";
     }
 }

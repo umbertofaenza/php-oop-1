@@ -8,4 +8,4 @@ $genre_drama = new Genre("Drama");
 
 $prod_1 = new TvSerie("Titolo", $genre_drama, "2004", "2010", 50, 5);
 
-var_dump($prod_1);
+echo $prod_1->get_details();

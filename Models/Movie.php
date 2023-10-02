@@ -8,8 +8,6 @@ require_once __DIR__ . "./Genre.php";
  * */
 class Movie extends Production
 {
-    public $title;
-    public $genre;
     public $published_year;
     public $running_time;
 
@@ -27,6 +25,7 @@ class Movie extends Production
 
     public function get_details()
     {
-        return "$this->title, $this->genre, $this->published_year, $this->running_time";
+        $genre_name = $this->genre->name;
+        return "$this->title, $genre_name, $this->published_year, $this->running_time";
     }
 }

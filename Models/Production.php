@@ -22,6 +22,7 @@ class Production
 
     public function get_details()
     {
-        return "$this->title, $this->genre";
+        $genre_name = $this->genre->name;
+        return "$this->title, $genre_name";
     }
 }
