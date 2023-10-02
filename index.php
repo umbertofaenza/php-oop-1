@@ -2,6 +2,7 @@
 
 require_once __DIR__ . './Models/Production.php';
 require_once __DIR__ . './Models/Movie.php';
+require_once __DIR__ . './Models/TvSerie.php';
 
 $genre_drama = new Genre("Drama");
 

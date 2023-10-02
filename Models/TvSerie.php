@@ -6,7 +6,7 @@ require_once __DIR__ . "./Genre.php";
  * ### Class TvSerie
  * Define a class TvSerie
  * */
-class Movie extends Production
+class TvSerie extends Production
 {
     public $title;
     public $genre;
